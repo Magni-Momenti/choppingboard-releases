@@ -2,6 +2,8 @@
 
 Chopping Board Initialization Process, Beta Phase:
 
+Note that Chopping Board is currently in a BETA deployment phase. Bugs are to be expected. Please report any you come across in the Discord server. (https://discord.com/invite/JJZmPZwCAc)
+
 1. Log into choppingboard.app by navigating to https://choppingboard.app/login
 2. Enter invite code when prompted
 3. In the sidebar, under 'Settings', click 'CB Tokens'.
