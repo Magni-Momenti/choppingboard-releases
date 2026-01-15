@@ -2,7 +2,7 @@
 
 Chopping Board Initialization Process, Beta Phase:
 
-1. Log into choppingboard.app
+1. Log into choppingboard.app by navigating to https://choppingboard.app/login
 2. Enter invite code when prompted
 3. In the sidebar, under 'Settings', click 'CB Tokens'.
 4. Each new machine requires a token to be created. To do this, in the new window, click the blue '+' symbol and create a new CB Token (Leave a note in there to indicate which machine the token is assigned to). You'll need this token later.
