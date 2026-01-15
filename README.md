@@ -19,7 +19,7 @@ To add earnings data (OPTIONAL), note that these instructions assume a Chromium 
 2. Enter your developer console (F12 on most browsers)
 3. In the developer window, open the 'Application' tab
 4. Under the Storage group within the Application tab, open Cookies -> https://salad.com
-5. Within the Cookies window, you'll find a cookie labeled 'auth'. ***(DO NOT SHARE THIS TOKEN WITH ANYONE! ALL SALAD FUNCTIONALITY CAN BE ACCESSED THROUGH THIS TOKEN! The Chopping Board app only uses this token to retrieve your earnings, rewards, and profile info. The token is only stored locally. Please note that this functionality is completely optional; if you're not comfortable with the idea of the app holding this token, you do not need to enter it.)*** Copy the token. If the token is NOT present, refresh the page while the developer window is still open.
+5. Within the Cookies window, you'll find a cookie labeled 'auth'. ***(DO NOT SHARE THIS TOKEN WITH ANYONE! ALL SALAD WEBSITE FUNCTIONALITY CAN BE ACCESSED THROUGH THIS TOKEN! The Chopping Board app only uses this token to retrieve your earnings, rewards, and profile info. The token is only stored locally. Please note that this functionality is completely optional; if you're not comfortable with the idea of the app holding this token, you do not need to enter it.)*** Copy the token. If the Salad Auth token is NOT present, refresh the page while the developer window is still open.
 6. On the Chopping Board app, insert the auth token into the field labelled 'Salad Auth Token' within the Salad tab. Click 'Save' and you should begin receiving Salad earnings information shortly (within ten minutes).
 
 To add emeter (OPTIONAL):
