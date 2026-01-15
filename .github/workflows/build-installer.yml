@@ -31,7 +31,6 @@ jobs:
             exit 1
           }
           Move-Item $exePath.FullName -Destination "$PWD\ChoppingBoard.exe"
-
       - name: Install NSIS
         run: choco install nsis -y
 
@@ -40,7 +39,33 @@ jobs:
           $nsisPath = "${env:ProgramFiles(x86)}\NSIS\makensis.exe"
           & $nsisPath /DAPPVER="${{ github.event.release.tag_name }}" installer.nsi
 
-      - name: Upload installer to release
+      - name: Generate checksums
+        run: |
+          # Calculate SHA256 for the ZIP file
+          $zipFile = Get-Item CB-*.zip | Select-Object -First 1
+          $zipHash = (Get-FileHash -Path $zipFile.FullName -Algorithm SHA256).Hash.ToLower()
+          $zipName = $zipFile.Name
+
+          # Calculate SHA256 for the installer
+          $installerName = "installer_ChoppingBoard_${{ github.event.release.tag_name }}.exe"
+          $installerHash = (Get-FileHash -Path $installerName -Algorithm SHA256).Hash.ToLower()
+
+          # Generate checksums.txt in BSD format
+          $checksumContent = @"
+          SHA256 ($zipName) = $zipHash
+          SHA256 ($installerName) = $installerHash
+          "@
+
+          Set-Content -Path "checksums.txt" -Value $checksumContent
+
+          # Display for verification
+          Write-Host "=== Generated checksums.txt ==="
+          Get-Content checksums.txt
+          Write-Host "================================"
+
+      - name: Upload installer and checksums to release
         uses: softprops/action-gh-release@v2
         with:
-          files: installer_ChoppingBoard_${{ github.event.release.tag_name }}.exe
+          files: |
+            installer_ChoppingBoard_${{ github.event.release.tag_name }}.exe
+            checksums.txt
